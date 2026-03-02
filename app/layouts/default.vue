@@ -1,22 +1,12 @@
 <script setup lang="ts">
-import { nuxtCtx } from "nuxt/kit";
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
 </script>
 
 <template>
   <div>
-    <nav>
-      <ul>
-        <li>
-          <NuxtLink to="/abonnements">Abonnements</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/calendrier">Calendrier</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/depenses">Dépenses</NuxtLink>
-        </li>
-      </ul>
-    </nav>
+    <Header />
     <slot />
+    <Footer />
   </div>
 </template>
