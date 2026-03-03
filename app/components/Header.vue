@@ -7,10 +7,10 @@
           <NuxtLink to="/abonnements">Abonnements</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/calendrier">Calendrier</NuxtLink>
+          <NuxtLink to="/">Calendrier</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/depenses">Dépenses</NuxtLink>
+          <NuxtLink to="/">Dépenses</NuxtLink>
         </li>
       </ul>
     </nav>

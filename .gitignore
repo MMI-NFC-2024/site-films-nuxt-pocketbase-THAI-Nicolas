@@ -25,3 +25,4 @@ logs
 
 # PocketBase
 pocketbase/*
+!pocketbase/pb_migrations

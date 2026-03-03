@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "pocketbase-server": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\thain\\Documents\\COURS\\DEV-PRACHT\\site-films-nuxt-pocketbase-THAI-Nicolas\\pocketbase-mcp\\build\\index.js"
+      ],
+      "env": {
+        "POCKETBASE_URL": "http://127.0.0.1:8090",
+        "POCKETBASE_ADMIN_EMAIL": "thainicolas06@gmail.com",
+        "POCKETBASE_ADMIN_PASSWORD": "mysubsPWD2026"
+      }
+    }
+  }
+}
