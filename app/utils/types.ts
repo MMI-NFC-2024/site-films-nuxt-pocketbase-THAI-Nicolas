@@ -12,6 +12,8 @@ export enum Collections {
 	Otps = "_otps",
 	Superusers = "_superusers",
 	Abonnements = "abonnements",
+	Categories = "categories",
+	Subscriptions = "subscriptions",
 	Users = "users",
 }
 
@@ -102,6 +104,37 @@ export type AbonnementsRecord = {
 	updated: IsoAutoDateString
 }
 
+export type CategoriesRecord = {
+	color?: string
+	created: IsoAutoDateString
+	icon?: string
+	id: string
+	name: string
+	updated: IsoAutoDateString
+	user?: RecordIdString
+}
+
+export enum SubscriptionsBillingCycleOptions {
+	"monthly" = "monthly",
+	"yearly" = "yearly",
+	"weekly" = "weekly",
+}
+export type SubscriptionsRecord = {
+	billing_cycle?: SubscriptionsBillingCycleOptions
+	category: RecordIdString
+	created: IsoAutoDateString
+	currency?: string
+	description?: string
+	id: string
+	is_active?: boolean
+	logo?: FileNameString
+	name: string
+	price: number
+	started_at: IsoDateString
+	updated: IsoAutoDateString
+	user?: RecordIdString
+}
+
 export type UsersRecord = {
 	avatar?: FileNameString
 	created: IsoAutoDateString
@@ -122,6 +155,8 @@ export type MfasResponse<Texpand = unknown> = Required<MfasRecord> & BaseSystemF
 export type OtpsResponse<Texpand = unknown> = Required<OtpsRecord> & BaseSystemFields<Texpand>
 export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> & AuthSystemFields<Texpand>
 export type AbonnementsResponse<Texpand = unknown> = Required<AbonnementsRecord> & BaseSystemFields<Texpand>
+export type CategoriesResponse<Texpand = unknown> = Required<CategoriesRecord> & BaseSystemFields<Texpand>
+export type SubscriptionsResponse<Texpand = unknown> = Required<SubscriptionsRecord> & BaseSystemFields<Texpand>
 export type UsersResponse<Texpand = unknown> = Required<UsersRecord> & AuthSystemFields<Texpand>
 
 // Types containing all Records and Responses, useful for creating typing helper functions
@@ -133,6 +168,8 @@ export type CollectionRecords = {
 	_otps: OtpsRecord
 	_superusers: SuperusersRecord
 	abonnements: AbonnementsRecord
+	categories: CategoriesRecord
+	subscriptions: SubscriptionsRecord
 	users: UsersRecord
 }
 
@@ -143,6 +180,8 @@ export type CollectionResponses = {
 	_otps: OtpsResponse
 	_superusers: SuperusersResponse
 	abonnements: AbonnementsResponse
+	categories: CategoriesResponse
+	subscriptions: SubscriptionsResponse
 	users: UsersResponse
 }
 

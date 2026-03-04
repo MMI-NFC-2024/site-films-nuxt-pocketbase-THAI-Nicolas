@@ -1,24 +1,26 @@
 <script setup lang="ts">
 const nuxtApp = useNuxtApp();
-const abonnements = await nuxtApp.$pb.collection("abonnements").getFullList();
+const subscriptions = await nuxtApp.$pb
+  .collection("subscriptions")
+  .getFullList();
 import ImgPb from "~/components/ImgPb.vue";
 </script>
 <template>
   <h1 class="text-4xl text-center text-blue-900">Page abonnements</h1>
   <ul>
     <li
-      v-for="abonnement in abonnements"
-      :key="abonnement.id"
+      v-for="subscription in subscriptions"
+      :key="subscription.id"
       class="flex items-center justify-center"
     >
       <!-- <NuxtLink :to="`/abonnements/${abonnement.id}`">{{ -->
       <NuxtLink
-        :to="{ name: 'abonnements-id', params: { id: abonnement.id } }"
-        >{{ abonnement.nom }}</NuxtLink
+        :to="{ name: 'abonnements-id', params: { id: subscription.id } }"
+        >{{ subscription.name }}</NuxtLink
       >
       <ImgPb
-        :record="abonnement"
-        :filename="abonnement.logo"
+        :record="subscription"
+        :filename="subscription.logo"
         alt="Logo de l'abonnement"
       />
     </li>
