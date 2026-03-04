@@ -1,7 +1,7 @@
 // plugins/pocketbase.js
 import PocketBase from "pocketbase";
 import type { AuthRecord } from "pocketbase";
-import type { TypedPocketBase } from "~/utils/types";
+import type { TypedPocketBase, UsersResponse } from "~/utils/types";
 
 type PbAuthCookie = {
   token: string;
@@ -38,7 +38,14 @@ export default defineNuxtPlugin(async () => {
     pb.authStore.clear();
   }
 
+  // Valeur réactive pour l'utilisateur
+  const user = ref<UsersResponse | null>(null);
+  pb.authStore.onChange((token, record) => {
+    console.log("Auth store changed:", { token, record });
+    user.value = record as UsersResponse | null;
+  });
+
   return {
-    provide: { pb },
+    provide: { pb, user },
   };
 });

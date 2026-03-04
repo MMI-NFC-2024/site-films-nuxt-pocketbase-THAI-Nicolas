@@ -1,4 +1,4 @@
-<script></script>
+<script setup lang="ts"></script>
 <template>
   <header class="">
     <nav>
@@ -7,10 +7,13 @@
           <NuxtLink to="/abonnements">Abonnements</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/">Calendrier</NuxtLink>
+          <NuxtLink to="/calendrier">Calendrier</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/">Dépenses</NuxtLink>
+          <NuxtLink to="/depenses">Dépenses</NuxtLink>
+        </li>
+        <li>
+          <Login />
         </li>
       </ul>
     </nav>
