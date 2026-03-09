@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const nuxtApp = useNuxtApp();
-const subscriptions = await nuxtApp.$pb
-  .collection("subscriptions")
-  .getFullList();
 import ImgPb from "~/components/ImgPb.vue";
+const nuxtApp = useNuxtApp();
+const { data: subscriptions } = await useAsyncData("subscriptions", () =>
+  nuxtApp.$pb.collection("subscriptions").getFullList(),
+);
 </script>
 <template>
   <h1 class="text-4xl text-center text-blue-900">Page abonnements</h1>
